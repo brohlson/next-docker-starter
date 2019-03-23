@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - 6
+cache:
+  directories:
+    - node_modules
+services:
+  - docker
+before_install:
+  - ./scripts/prod.sh
+script:
+  - docker run -p 3000:3000 nextjs-docker
